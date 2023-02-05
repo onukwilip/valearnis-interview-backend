@@ -7,6 +7,7 @@ const app = express();
 const port = 5000;
 const dotenv = require("dotenv");
 const signUpRouter = require("./routes/signup");
+const mailRouter = require("./routes/mail");
 dotenv.config();
 
 connect();
@@ -17,5 +18,6 @@ app.use(cors());
 
 app.use("/api/login", loginRouter);
 app.use("/api/signup", signUpRouter);
+app.use("/api/mail", mailRouter);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
